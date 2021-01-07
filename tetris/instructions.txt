@@ -1,0 +1,55 @@
+  * Nimi: Paul Ahokas
+  * Opiskelijanumero: 283302
+  * UserID: 1693
+  * S-posti: paul.ahokas@tuni.fi
+
+
+Valmista pohjakoodia ei ole muokattu.
+Pelissä ei voi kääntää tetrominojen, joten pistelasku katsotaan tetrominojen
+lukumäärästä. Pelissä pätee normaalin Tetriksen säännöt edellistä lukuunottamatta.
+Tetrominot putoavat alas kunnes osuvat toiseen tetrominoon tai pelialueen
+alareunaan.
+
+'A' liikuttaa tetrominoa vasemmalle, 'D' oikealle, 'S' alaspäin
+ja 'E' pudottaa tetrominon niin alas kuin mahdollista.
+
+GUI:ssa olevat napit toimivat kuten niiden luulisi. 'Start' aloittaa pelin,
+'Reset' alustaa pelin(edellinen aika ja pistelukema jää näkyviin kuitenkin),
+'Close' sulkee pelin(myös space bar/välilyönti tekee tämän), 'Hard' asettaa
+pelin tason vaikealle, 'Normal' normaalille, 'Easy' helpolle. Vaikeustaso
+vaikuttaa tetrominon putoamisnopeuteen, putoamisnopeuden nopeutumiseen ajan
+myötä ja saatavaan pistemäärään/tetromino. Vaikeustason voi asettaa vain,
+kun peli on pysähtynyt eli se pitää aloittaa alusta(napit piilotetaan).
+
+Ohjelmassa tetrominoa käsitellään neljän neliön(QGraphicsRectItem) avulla,
+jotka on tallennettuna vektoriin silmukassa käsittelyä varten.
+Jokaisen tetrominon piirtäminen on toteutettu asettelemalla neliöt vain
+tiettyihin koordinaatteihin.
+Niitä siirrellään yhdessä ja kaikki tarkastelu tehdää kullekin neliölle.
+Tetromino saadaan pidettyä pelikentän sisällä .contains() avulla,
+päällekkäisyyden tarkastelussa, tarvitsi ensin siirtää neliöt ja sitten vasta
+collidingItems() avulla saadaan selville tapahtuuko päällekkäisyyttä, jos
+tapahtui niin neliöt vain siirretään takaisin.
+Jo tippuneita neliöitä käsitellään QGraphicsScenen avulla. Esimerkiksi
+täysinäisten rivien tarkastelussa voidaan käydä jokainen neliö ->items()
+avulla ja sitten niiden poistaminen/siirtely onnistuu. Matriisi/vektori
+ratkaisu ei siis ollut tarpeen.
+Ohjelma on toteutettu mainwindow -luokkaan.
+
+
+
+Lisäominaisuudet:
+- Peliin on toteutettu kaikki seitsemän (7) erilaista tetrominoa.
+- Täysinäiset vaakarivit poistetaan.
+- Jo pysähtynyttä tetrominoa pystyy liikuttamaan sivusuunnassa, jos se
+  on mahdollista. Tämä on rajoitettu ajalla, mitä nopeampi putoamisnopeus
+  sitä vähemmän aikaa siirrellä tetrominoa.
+- Pelin aikana kerrotaan siihen mennessä kulunut aika.
+- Pelissä on pistelasku, pisteitä saa tetrominojen määrästä.
+- Pelissä on erilaisia vaikeustasoja, joissa putoamisnopeudet vaihtelevat.
+- Tetrominojen putoaminen nopeutuu automaattisesti pelin edetessä.
+- Pelin päätyttyä (tai muutenkin) peliasetelman voi palauttaa
+  alkutilanteeseen, jolloin käyttäjä voi aloittaa uuden pelin
+  käynnistämättä ohjelmaa uudelleen.
+- Putoavan tetrominon pystyy pudottamaan kerralla niin alas
+  kuin mahdollista painamalle 'E' nappia.
