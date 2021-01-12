@@ -11,3 +11,5 @@ Goal was to learn modularity in object-oriented programming and how classes can 
 
 - Shopping done 27.3.2020, This program reads information about stores, their location and product information from a text file and saves them into a data structure. User can then access the stored information using different commands.
 Goal was to revise how STL containers and iterators work, and how to read from files.
+
+- Game15 done 9.2.2020, This is a game where you need to sort numbers 1-15 on a 4x4 board using WASD keys. Goal was to practice using vectors and object-oriented programming.
