@@ -1,4 +1,7 @@
 # koulu-projektit
+- WeatherElectricTool done 4.18.2021,
+This tool fetches weather data from Finnish Meteorological Institute's weather data API and electricity data from Fingrid's electricity data API, and presents the data within the same figure.
+
 - Tetris done 8.5.2020,
 Goal was to learn to design and implement a gui with Qt.
 
