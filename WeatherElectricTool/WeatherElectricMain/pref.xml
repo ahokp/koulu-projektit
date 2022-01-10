@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SavedPreference>
+    <Types>
+        <DataDetail>
+            <dataSourceName>Finnish Meteorological Institute</dataSourceName>
+            <dataLocationName>Pirkkala</dataLocationName>
+            <graphName>Temperature, Pirkkala</graphName>
+            <importerIndex>0</importerIndex>
+            <apiDataType>1</apiDataType>
+        </DataDetail>
+        <DataDetail>
+            <dataSourceName>Fingrid Oyj</dataSourceName>
+            <dataLocationName>Finland</dataLocationName>
+            <graphName>Electricity Consumption, Finland</graphName>
+            <importerIndex>0</importerIndex>
+            <apiDataType>512</apiDataType>
+        </DataDetail>
+    </Types>
+</SavedPreference>
